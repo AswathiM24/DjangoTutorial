@@ -4,7 +4,13 @@ from django.shortcuts import render
 
 # Create your views here.
 def print_hello(request):
-    movie_list={'title':'Aadujeevitham',
+    movie_data={'movies':[{'title':'Aadujeevitham',
                 'year':2024,
-                'Summary':'Survival thriller'}
-    return render(request,'hello.html',movie_list)
+                'success':False,
+                'Summary':'Survival thriller'},
+                {'title':'Manjummal boys',
+                'year':2024,
+                'Summary':'Survival thriller',
+                'success':True}
+                ]}
+    return render(request,'hello.html',movie_data)

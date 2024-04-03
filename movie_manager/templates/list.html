@@ -1,2 +1,13 @@
+{% load static %}
 <h1>List Movies</h1>
 {% include "menu.html" %} 
+{% for movie_obj in movies%}
+<h1>Hello Django</h1>
+<img src="{% static "images/" %}{{movie_obj.img}}">
+<h3>Title : {{movie_obj.title | upper}}</h3>
+<h3>Year: {{movie_obj.year}}</h3>
+<h3>Summary: {{movie_obj.Summary | default:"No data available"}}</h3>
+{% if movie_obj.success %}
+<p>Movie was success at that time</p>
+{% endif %}
+{% endfor %}
